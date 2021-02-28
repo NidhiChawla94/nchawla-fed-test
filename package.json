@@ -11,7 +11,8 @@
     "dist": "cross-env NODE_ENV=production webpack --config=./webpack.config.babel.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config=./webpack.config.babel.js",
     "test": "jest",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "start": "react-scripts start"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,8 @@
   "dependencies": {
     "prettier": "^2.1.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-scripts": "^4.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
@@ -71,5 +73,17 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
