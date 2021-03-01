@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-unused-state */
+
 import React from 'react';
 import constants from './util/constants';
 import './css/dist/style.css';
@@ -15,10 +15,12 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
+		// Fetch First 5 random users
 		this.fetchUsers();
 	}
 
 	fetchUsers = () => {
+		// Set loading to true till the time they are not fetched
 		this.setState({
 			loading: true
 		});
@@ -26,6 +28,7 @@ class App extends React.Component {
 		fetch(constants.url)
 			.then(response => response.json())
 			.then(data => {
+				// Merge new results with previous users
 				userData = [...userData, ...data.results];
 				this.setState({
 					users: userData,
