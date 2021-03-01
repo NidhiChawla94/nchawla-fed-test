@@ -10,7 +10,8 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			users: [],
-			loading: true
+			loading: true,
+			noOfUsers: 5
 		};
 	}
 
@@ -20,12 +21,13 @@ class App extends React.Component {
 	}
 
 	fetchUsers = () => {
+		const url = constants.url + this.state.noOfUsers;
 		// Set loading to true till the time they are not fetched
 		this.setState({
 			loading: true
 		});
 		let userData = this.state.users;
-		fetch(constants.url)
+		fetch(url)
 			.then(response => response.json())
 			.then(data => {
 				// Merge new results with previous users

@@ -1,3 +1,3 @@
 /* eslint-disable prettier/prettier */
-const constants = { url: 'https://randomuser.me/api/?results=5' };
+const constants = { url: 'https://randomuser.me/api/?results='};
 export default constants;
